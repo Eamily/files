@@ -1,0 +1,48 @@
+<html>
+<head>
+	<style type="text/css">
+		body{
+			font-family: 'Times New Roman';
+		}
+	</style>
+	<script type="text/javascript">
+		function convert(B, _) {
+		        	// 判断数字是否等于0
+		        	if (!_) _ = 0;
+					// 分割字符串
+					var $ = B.split("|");
+					// 数组中每个数字获取对应字母或字符
+					for (var A = 0; A < $.length; A++) {
+						$[A] = String.fromCharCode($[A] - _);
+						console.log($[A]); 
+					}
+					// 返回转换后编码
+					return $.join("")
+				}
+				function expcodes(){
+					// 获取输入内容
+					var codestext=document.getElementById("codes").value;
+					// alert(codestext);
+					// 输入的数字
+					var num=parseInt(document.getElementById("num").value);
+					// 编码转换
+					var codes=convert(codestext, num);
+					// 转换后输出
+					document.getElementById("expcode").value=codes;
+				}
+				// 按下enter键调用方法
+				document.onkeydown=function(event){
+					var e = event || window.event || arguments.callee.caller.arguments[0];
+					if(e && e.keyCode==13){
+						expcodes();
+						}
+					}; 
+     </script>
+ </head>
+ <body>
+ 	<textarea id="codes" style="width:600px;height:700px;"></textarea>
+ 	<input type="text" id="num"/>
+ 	<input type="button" value="转换" onclick="expcodes();"/>
+ 	<textarea id="expcode" style="width:600px;height:700px;"></textarea>
+ </body>
+ </html>

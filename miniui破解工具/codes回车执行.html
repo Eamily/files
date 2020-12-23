@@ -1,0 +1,35 @@
+<html>
+<head>
+	<script type="text/javascript">
+				expcodes();
+		        function convert(B, _) {
+					if (!_) _ = 0;
+					var $ = B.split("|");
+					for (var A = 0; A < $.length; A++) $[A] = String.fromCharCode($[A] - _);
+					return $.join("")
+				}
+				function expcodes(){
+					var codestext=document.getElementById("codes").value;
+				
+					var num=parseInt(document.getElementById("num").value);
+					if (1)
+					for (var num=0;num<99;num++){
+						alert(num);
+					var codes=convert(codestext, num);
+										document.getElementById("expcode").value=codes;
+										 	alert(codes);
+		          }
+					
+	
+			
+				}
+	
+	</script>
+</head>
+<body>
+<textarea id="codes" style="width:600px;height:700px;"></textarea>
+<input type="text" id="num"/>
+<input type="button" value="×ª»»"onclick="expcodes();"/>
+<textarea id="expcode" style="width:600px;height:700px;"></textarea>
+</body>
+</html>
